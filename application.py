@@ -1,15 +1,10 @@
 from flask import Flask
-from activity import student_favorite
-
 
 application = Flask(__name__)
 
-application.register_blueprint(student_favorite, url_prefix='/favoriteContent')
-
 @application.route('/')
-def index():
-	return 'hello world'
-
+def hello_world():
+    return 'Hello, World!'
 
 if __name__ == '__main__':
-	application.run()
+    application.run(debug=True, port=8080)
